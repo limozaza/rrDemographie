@@ -5,13 +5,11 @@ export const ERROR_GET_COUNTRIES = "ERROR_GET_COUNTRIES";
 
 export const getCountries = () => 
 {
-    console.log("oko")
     return (dispatch) => 
     {
         axios("http://api.population.io:80/1.0/countries")
             .then(
                 (response) => {
-                    console.log(response.data.countries);
                     dispatch(
                         {
                             type: GET_COUNTRIES,
@@ -22,7 +20,6 @@ export const getCountries = () =>
             )
             .catch(
                 (error) => {
-                    console.log(error);
                     dispatch(
                         {
                             type: ERROR_GET_COUNTRIES,
